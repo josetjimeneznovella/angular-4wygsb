@@ -1,0 +1,13 @@
+<form [formGroup]="formGroup" (ngSubmit)="submit($event)">
+  <jtj-input
+    id="firstName"
+    label="Name"
+    maxLength="55"
+    icon="person"
+  ></jtj-input>
+  <jtj-input id="lastName" label="Surname" maxLength="55"></jtj-input>
+  <jtj-input id="email" label="E-mail" maxLength="255" icon="email"></jtj-input>
+  <div>
+    <button mat-raised-button type="submit" color="primary">Submit</button>
+  </div>
+</form>
