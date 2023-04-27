@@ -1,19 +1,18 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatTableDataSource, MatTableDataSourcePaginator } from '@angular/material/table';
 
-/** @title Form field theming */
 @Component({
   selector: 'jtj-table',
   template: `
   <table mat-table [dataSource]="matTableDataSource">
-    <ng-container *ngFor="let column of columns" [matColumnDef]="column.caption">
+    <ng-container *ngFor="let column of columns" [matColumnDef]="column.header">
       <ng-container>
         <th mat-header-cell *matHeaderCellDef>
-          {{column.caption}}
+          {{column.header}}
         </th>
       </ng-container>
       <td mat-cell *matCellDef="let element">
-        {{element[column.field]}}
+        {{element[column.id]}}
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -36,7 +35,7 @@ export class JtjTable implements OnInit {
   public displayedColumns: string[];
 
   ngOnInit(): void {
-    this.displayedColumns = this.columns.map((tableColumn: TableColumn) => tableColumn.caption);
+    this.displayedColumns = this.columns.map((tableColumn: TableColumn) => tableColumn.header);
   }
 
   setDataSource(data: any) {
@@ -45,6 +44,6 @@ export class JtjTable implements OnInit {
 }
 
 export interface TableColumn {
-  caption: string;
-  field: string;
+  id: string;
+  header: string;
 }
