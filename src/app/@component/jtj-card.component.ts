@@ -16,7 +16,13 @@ import { ThemePalette } from '@angular/material/core';
   <mat-card class="example-card">
     <mat-card-header>
       <mat-card-title>{{title}}</mat-card-title>
-      <mat-card-subtitle *ngIf="subtitle">{{subtitle}}</mat-card-subtitle>
+      <span class="spacer"></span>
+      <button *ngIf="filter" mat-mini-fab color="primary" class="filter">
+        <mat-icon>filter_list</mat-icon>
+      </button>
+      <button *ngIf="filter" mat-mini-fab color="primary" class="filter">
+        <mat-icon>download</mat-icon>
+      </button>
     </mat-card-header>
     <mat-card-content>
       <ng-content></ng-content>
@@ -27,12 +33,23 @@ import { ThemePalette } from '@angular/material/core';
       mat-card {
         width: 100%;
       }
+
+      mat-card-header {
+        margin: 0 0 20px 0;
+      }
+
+      button {
+        border-radius: 4px !important;
+        margin-right: 6px;
+      }
   `]
 })
 export class JtjCard {
 
   @Input() title: string;
 
-  @Input() subtitle: string;
+  @Input() filter: any;
+
+  @Input() download: any;
 
 }
