@@ -3,17 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialExampleModule } from '../material.module';
-import { FormFieldThemingExample } from './form-field-theming-example';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
-import { JtjInput } from './@component/jtj-input.component';
-import { ToUpperCaseDirective } from './@directive/to-upper-case.directive';
-import { ToLowerCaseDirective } from './@directive/to-lower-case.directive';
-import { JtjCard } from './@component/jtj-card.component';
+import { JtjInput } from './core/@component/jtj-input.component';
+import { ToUpperCaseDirective } from './core/@directive/to-upper-case.directive';
+import { ToLowerCaseDirective } from './core/@directive/to-lower-case.directive';
+import { JtjCard } from './core/@component/jtj-card.component';
+import { AirlinesComponent } from './airlines/airlines.component';
 
 @NgModule({
-  declarations: [FormFieldThemingExample, JtjInput, JtjCard, ToUpperCaseDirective, ToLowerCaseDirective],
+  declarations: [AirlinesComponent, JtjInput, JtjCard, ToUpperCaseDirective, ToLowerCaseDirective],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -23,6 +23,6 @@ import { JtjCard } from './@component/jtj-card.component';
     MaterialExampleModule,
     ReactiveFormsModule,
   ],
-  bootstrap: [FormFieldThemingExample],
+  bootstrap: [AirlinesComponent],
 })
 export class AppModule {}

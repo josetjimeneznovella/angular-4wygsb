@@ -40,7 +40,7 @@ import { ThemePalette } from '@angular/material/core';
 
       button {
         border-radius: 4px !important;
-        margin-right: 6px;
+        margin-left: 6px;
       }
   `]
 })
