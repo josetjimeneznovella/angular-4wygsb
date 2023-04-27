@@ -1,28 +1,19 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {
-  AbstractControl,
-  ControlContainer,
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  FormGroupDirective,
-} from '@angular/forms';
-import { ThemePalette } from '@angular/material/core';
 import { MatTableDataSource, MatTableDataSourcePaginator } from '@angular/material/table';
 
 /** @title Form field theming */
 @Component({
   selector: 'jtj-table',
   template: `
-  <table mat-table [dataSource]="_dataSource">
-    <ng-container *ngFor="let c of columns" [matColumnDef]="c.caption">
+  <table mat-table [dataSource]="matTableDataSource">
+    <ng-container *ngFor="let column of columns" [matColumnDef]="column.caption">
       <ng-container>
         <th mat-header-cell *matHeaderCellDef>
-          {{c.caption}}
+          {{column.caption}}
         </th>
       </ng-container>
       <td mat-cell *matCellDef="let element">
-        {{element[c.field]}}
+        {{element[column.field]}}
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -34,23 +25,22 @@ import { MatTableDataSource, MatTableDataSourcePaginator } from '@angular/materi
 })
 export class JtjTable implements OnInit {
 
-
-  public _dataSource = new MatTableDataSource;
-
-  public displayedColumns: string[];
-
   @Input() columns: TableColumn[];
 
   @Input() set dataSource(data: any[]) {
     this.setDataSource(data);
   }
 
+  public matTableDataSource = new MatTableDataSource;
+
+  public displayedColumns: string[];
+
   ngOnInit(): void {
     this.displayedColumns = this.columns.map((tableColumn: TableColumn) => tableColumn.caption);
   }
 
   setDataSource(data: any) {
-    this._dataSource = new MatTableDataSource<any>(data);
+    this.matTableDataSource = new MatTableDataSource<any>(data);
   }
 }
 
