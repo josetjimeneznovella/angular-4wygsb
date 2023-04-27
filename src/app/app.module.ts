@@ -8,10 +8,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 import { JtjInput } from './@component/jtj-input.component';
-import { UpperCaseInputDirective } from './@directive/upper-case-input.directive';
+import { ToUpperCaseDirective } from './@directive/to-upper-case.directive';
+import { ToLowerCaseDirective } from './@directive/to-lower-case.directive';
 
 @NgModule({
-  declarations: [FormFieldThemingExample, JtjInput, UpperCaseInputDirective],
+  declarations: [FormFieldThemingExample, JtjInput, ToUpperCaseDirective, ToLowerCaseDirective],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
