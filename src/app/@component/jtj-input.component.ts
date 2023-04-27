@@ -17,12 +17,16 @@ import { ThemePalette } from '@angular/material/core';
     <mat-label>{{label}}</mat-label>
     <input matInput #input formControlName="{{id}}" maxlength="{{maxLength}}" />
     <mat-hint align="end">{{input.value.length}}/{{maxLength}}</mat-hint>
-    <mat-icon matSuffix color="primary">{{icon}}</mat-icon>
+    <mat-icon *ngIf="icon" matSuffix color="primary">{{icon}}</mat-icon>
     <mat-error *ngIf="formControl.hasError('required')">{{label}} is a required field</mat-error>
     <mat-error *ngIf="formControl.hasError('email')">Please insert a valid mail</mat-error>
   </mat-form-field>
     `,
-  styles: [],
+  styles: [`
+      mat-form-field {
+        width: 100%;
+      }
+  `],
   viewProviders: [
     {
       provide: ControlContainer,
