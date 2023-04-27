@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -6,32 +6,63 @@ import {
   Validators,
 } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
-
+import { PassengerService} from './passenger.service';
 /** @title Form field theming */
 @Component({
-  selector: 'airlines',
-  templateUrl: 'airlines.component.html',
-  styleUrls: ['airlines.component.css'],
+  selector: 'passenger',
+  templateUrl: 'passenger.component.html',
+  styleUrls: ['passenger.component.css'],
 })
-export class AirlinesComponent {
+export class PassengerComponent implements OnInit{
   
   formGroup: FormGroup;
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  
-  dataSource = ELEMENT_DATA;
+  dataSource: any;
 
-  constructor(private formBuilder: FormBuilder) {
+  columns: any;
+
+  constructor(private formBuilder: FormBuilder, private passengerService: PassengerService) {
+    
     this.formGroup = formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
     });
+
+    passengerService.findAll(0, 10);
+  }
+
+
+  ngOnInit(): void {
+    this.dataSource = this.getDataSource();
+    this.columns = this.getColumns();
   }
 
   submit(event: any) {
     console.log(this.formGroup.controls['username'].value);
   }
+
+
+
+
+
+
+
+
+  getDataSource(): any[] {
+    return [
+      { name: 'Felipe', mail: 'felipe@gmai.com' },
+      { name: 'Cecilia', mail: 'cecilia@gmail.com' }
+    ];
+  }
+
+
+  getColumns():  any[] {
+    return [
+      { caption: 'Name', field: 'name' },
+      { caption: 'Mail', field: 'mail' }
+    ];
+  };
 }
 
 export interface PeriodicElement {

@@ -10,10 +10,11 @@ import { JtjInput } from './core/@component/jtj-input.component';
 import { ToUpperCaseDirective } from './core/@directive/to-upper-case.directive';
 import { ToLowerCaseDirective } from './core/@directive/to-lower-case.directive';
 import { JtjCard } from './core/@component/jtj-card.component';
-import { AirlinesComponent } from './airlines/airlines.component';
+import { PassengerComponent } from './passenger/passenger.component';
+import { JtjTable } from './core/@component/jtj-table.component';
 
 @NgModule({
-  declarations: [AirlinesComponent, JtjInput, JtjCard, ToUpperCaseDirective, ToLowerCaseDirective],
+  declarations: [PassengerComponent, JtjInput, JtjCard, JtjTable, ToUpperCaseDirective, ToLowerCaseDirective],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -23,6 +24,6 @@ import { AirlinesComponent } from './airlines/airlines.component';
     MaterialExampleModule,
     ReactiveFormsModule,
   ],
-  bootstrap: [AirlinesComponent],
+  bootstrap: [PassengerComponent],
 })
 export class AppModule {}
