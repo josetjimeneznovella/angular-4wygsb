@@ -13,9 +13,10 @@ import { JtjCard } from './core/@component/jtj-card.component';
 import { JtjTable } from './core/@component/jtj-table.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [HomeComponent, JtjInput, JtjCard, JtjTable, MenuComponent, ToUpperCaseDirective, ToLowerCaseDirective],
+  declarations: [HomeComponent, JtjInput, JtjCard, JtjTable, MenuComponent, HeaderComponent, ToUpperCaseDirective, ToLowerCaseDirective],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
