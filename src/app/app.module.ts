@@ -10,7 +10,7 @@ import { JtjInput } from './core/@component/jtj-input.component';
 import { ToUpperCaseDirective } from './core/@directive/to-upper-case.directive';
 import { ToLowerCaseDirective } from './core/@directive/to-lower-case.directive';
 import { JtjCard } from './core/@component/jtj-card.component';
-import { PassengerComponent } from './passenger/passenger.component';
+import { PassengerComponent } from './home/home.component';
 import { JtjTable } from './core/@component/jtj-table.component';
 
 @NgModule({

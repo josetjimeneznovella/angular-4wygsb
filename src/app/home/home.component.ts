@@ -7,12 +7,11 @@ import {
 } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { TableColumn } from '../core/@component/jtj-table.component';
-import { PassengerService} from './passenger.service';
-/** @title Form field theming */
+
 @Component({
-  selector: 'passenger',
-  templateUrl: 'passenger.component.html',
-  styleUrls: ['passenger.component.css'],
+  selector: 'app-home',
+  templateUrl: 'home.component.html',
+  styleUrls: ['home.component.scss'],
 })
 export class PassengerComponent implements OnInit{
   
@@ -37,7 +36,7 @@ export class PassengerComponent implements OnInit{
     { header: 'Symbol', id: 'symbol' }
   ];
 
-  constructor(private formBuilder: FormBuilder, private passengerService: PassengerService) {
+  constructor(private formBuilder: FormBuilder) {
     
     this.formGroup = formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
@@ -45,7 +44,6 @@ export class PassengerComponent implements OnInit{
       lastName: ['', [Validators.required]],
     });
 
-    passengerService.findAll(0, 10);
   }
 
 

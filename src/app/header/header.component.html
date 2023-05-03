@@ -1,0 +1,66 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+      <img src="assets/images/ingenico-logo-blanco.png">
+      <span class="spacer"></span>
+<!--         <button mat-button [matMenuTriggerFor]="repairsMenu" *hasAnyAuthority="['ROLE_ADMIN']">
+          <mat-icon>build</mat-icon>
+          <span [translate]="'menu.repairs'">Repairs</span>
+      </button>
+      <mat-menu #repairsMenu="matMenu">
+          <button mat-menu-item routerLink="/budgets">
+              <mat-icon>attach_money</mat-icon>
+              <span [translate]="'menu.repairs.budgets'">Budgets</span>
+          </button>
+      </mat-menu> -->
+      <!-- <button mat-button [matMenuTriggerFor]="deliveriesMenu" *hasAnyAuthority="['ROLE_ADMIN']">
+          <mat-icon>send</mat-icon>
+          <span [translate]="'menu.deliveries'">Deliveries</span>
+      </button>
+      <mat-menu #deliveriesMenu="matMenu">
+          <button mat-menu-item routerLink="/deliverynotes">
+              <mat-icon>description</mat-icon>
+              <span [translate]="'menu.deliveries.deliverynotes'">Delivery notes</span>
+          </button>
+      </mat-menu> -->
+      <!-- <button mat-button [matMenuTriggerFor]="reportsMenu" *hasAnyAuthority="['ROLE_ADMIN']">
+          <mat-icon>analytics</mat-icon>
+          <span [translate]="'menu.reports'">Reports</span>
+      </button>
+      <mat-menu #reportsMenu="matMenu">
+          <button mat-menu-item routerLink="/nonrepairables">
+              <mat-icon>bug_report</mat-icon>
+              <span [translate]="'menu.reports.irreparables'">Non repairables</span>
+          </button>
+          <button mat-menu-item routerLink="/mensualreports">
+              <mat-icon>show_chart</mat-icon>
+              <span [translate]="'menu.reports.mensualreports'">Mensual reports</span>
+          </button>
+      </mat-menu> -->
+      <!-- <button mat-button [matMenuTriggerFor]="administrationMenu" *hasAnyAuthority="['ROLE_ADMIN']">
+          <mat-icon>settings</mat-icon>
+          <span [translate]="'menu.administration'">Administration</span>
+      </button>
+      <mat-menu #administrationMenu="matMenu">
+          <button mat-menu-item routerLink="/users">
+              <mat-icon>person</mat-icon>
+              <span [translate]="'menu.administration.usermanagement'">User management</span>
+          </button>
+      </mat-menu> -->
+      <button mat-button [routerLink]="['']" [queryParams]="{login: true}" *isAuthenticated="false">
+          <mat-icon>login</mat-icon>
+          <span [translate]="'menu.login'">Login</span>
+      </button>
+      <button mat-button [routerLink]="['']" [queryParams]="{logout: true}" *isAuthenticated="true">
+          <mat-icon>logout</mat-icon>
+          <span [translate]="'menu.logout'">Logout</span>
+      </button>
+      <button mat-button [matMenuTriggerFor]="languageMenu">
+          <mat-icon>language</mat-icon>
+          <span [translate]="'menu.language'">Language</span>
+      </button>
+      <mat-menu #languageMenu="matMenu">
+          <a mat-menu-item [routerLink]="['']" [queryParams]="{language: 'en'}" [translate]="'language.en'">English</a>
+          <a mat-menu-item [routerLink]="['']" [queryParams]="{language: 'es'}" [translate]="'language.es'">Spanish</a>
+      </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
