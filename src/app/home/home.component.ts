@@ -9,11 +9,11 @@ import { ThemePalette } from '@angular/material/core';
 import { TableColumn } from '../core/@component/jtj-table.component';
 
 @Component({
-  selector: 'app-home',
+  selector: 'home',
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.scss'],
 })
-export class PassengerComponent implements OnInit{
+export class HomeComponent implements OnInit{
   
   formGroup: FormGroup;
 

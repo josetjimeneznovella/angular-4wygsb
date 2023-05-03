@@ -1,6 +1,6 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="app-menu mat-elevation-z4">
   <mat-toolbar-row>
-      <img src="assets/images/ingenico-logo-blanco.png">
+      <img class="logo" src="assets/images/servicio10-logo.png">
       <span class="spacer"></span>
 <!--         <button mat-button [matMenuTriggerFor]="repairsMenu" *hasAnyAuthority="['ROLE_ADMIN']">
           <mat-icon>build</mat-icon>
@@ -46,21 +46,23 @@
               <span [translate]="'menu.administration.usermanagement'">User management</span>
           </button>
       </mat-menu> -->
-      <button mat-button [routerLink]="['']" [queryParams]="{login: true}" *isAuthenticated="false">
+      <button mat-button>
           <mat-icon>login</mat-icon>
           <span [translate]="'menu.login'">Login</span>
       </button>
+      <!--
       <button mat-button [routerLink]="['']" [queryParams]="{logout: true}" *isAuthenticated="true">
           <mat-icon>logout</mat-icon>
           <span [translate]="'menu.logout'">Logout</span>
       </button>
+      -->
       <button mat-button [matMenuTriggerFor]="languageMenu">
           <mat-icon>language</mat-icon>
           <span [translate]="'menu.language'">Language</span>
       </button>
       <mat-menu #languageMenu="matMenu">
-          <a mat-menu-item [routerLink]="['']" [queryParams]="{language: 'en'}" [translate]="'language.en'">English</a>
-          <a mat-menu-item [routerLink]="['']" [queryParams]="{language: 'es'}" [translate]="'language.es'">Spanish</a>
+          <a mat-menu-item>English</a>
+          <a mat-menu-item>Spanish</a>
       </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
